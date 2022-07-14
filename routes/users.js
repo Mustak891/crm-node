@@ -60,8 +60,7 @@ router.post('/login', async (req, res) => {
                 const token = await user.generateAuthToken();
                 res.cookie("token", token, {
                     expires: new Date(Date.now() + 8600000),
-                    secure: true,
-                    domain: "mondaycrm.netlify.app",
+                    httpOnly: true,
                 });
                 res.status(200).send("User logged in successfully" );
             }else{
