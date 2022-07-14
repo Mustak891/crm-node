@@ -11,7 +11,7 @@ const app = express();
 
 dotenv.config();
 
-const Port = process.env.PORT;
+const Port = process.env.PORT || 4000;
 
 const ConnectionDB = async () => {
     try {
