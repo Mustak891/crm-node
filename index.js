@@ -30,10 +30,7 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true,
-}));
+app.use(cors());
 
 app.use(express.json());
 
