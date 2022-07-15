@@ -61,9 +61,6 @@ router.post('/login', async (req, res) => {
                 res.cookie("token", token, {
                     expires: new Date(Date.now() + 8600000),
                     httpOnly: true,
-                    maxAge: 1000 * 60 * 30,
-                    sameSite: "none",
-                    secure: true,
                 });
                 res.status(200).send("User logged in successfully" );
             }else{
