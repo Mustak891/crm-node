@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
 
 //user logout
 router.get('/logout', async (req, res) => {
-    res.clearCookie('token', {path: '/'});
+    res.clearCookie('token', {path: '/', domain: 'capstone-crm-node.herokuapp.com' });
     res.status(200).send("User logged out successfully");
 })
 
