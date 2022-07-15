@@ -63,6 +63,7 @@ router.post('/login', async (req, res) => {
                     httpOnly: true,
                     maxAge: 8600000,
                     sameSite: "none",
+                    domain: "localhost",
                 });
                 res.status(200).send("User logged in successfully" );
             }else{
