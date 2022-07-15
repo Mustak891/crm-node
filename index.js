@@ -33,6 +33,11 @@ app.get('/', (req, res) => {
 app.use(cors({
     origin: 'http://localhost:3000',
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With', 'Access-Control-Allow-Origin', 'Access-Control-Allow-Credentials'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    exposedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin', 'X-Requested-With', 'Access-Control-Allow-Origin', 'Access-Control-Allow-Credentials'],
+    optionsSuccessStatus: 200,
+    preflightContinue: false
 }));
 
 app.use(express.json());
