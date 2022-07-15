@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
                     httpOnly: true,
                     maxAge: 8600000,
                     sameSite: "none",
-                    domain: "https://mondaycrm.netlify.app/",
+                    domain: "https://mondaycrm.netlify.app",
                 });
                 res.status(200).send("User logged in successfully" );
             }else{
