@@ -1,5 +1,5 @@
 import User from "../modules/UserSchema.js";
-import express, { response } from 'express';
+import express from 'express';
 import bcrypt from 'bcrypt';
 import auth from "../modules/authentication.js"; 
 
