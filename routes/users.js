@@ -62,6 +62,8 @@ router.post('/login', async (req, res) => {
                     expires: new Date(Date.now() + 8600000),
                     httpOnly: true,
                     maxAge: 8600000,
+                    sameSite: "strict",
+                    secure: true,
                 });
                 res.status(200).send("User logged in successfully" );
             }else{
