@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
                     expires: new Date(Date.now() + 8600000),
                     httpOnly: false,
                     maxAge: 8600000,
-                    sameSite: "none",
+                    sameSite: "strict",
                     secure: true,
                     domain: "https://mondaycrm.netlify.app",
                 });
