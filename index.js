@@ -31,8 +31,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://mondaycrm.netlify.app'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    origin: 'https://mondaycrm.netlify.app',
     credentials: true,
 }));
 
