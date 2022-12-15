@@ -30,7 +30,10 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 })
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://mondaycrm.netlify.app',
+    credentials: true,
+}));
 
 app.use(express.json());
 
