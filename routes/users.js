@@ -1,5 +1,5 @@
 import User from "../modules/UserSchema.js";
-import express, { response } from 'express';
+import express from 'express';
 import bcrypt from 'bcrypt';
 import auth from "../modules/authentication.js"; 
 
@@ -61,7 +61,10 @@ router.post('/login', async (req, res) => {
                 res.cookie("token", token, {
                     expires: new Date(Date.now() + 8600000),
                     httpOnly: true,
+                    secure: true,
+                    sameSite: "none",
                 });
+                console.log(token)
                 res.status(200).send("User logged in successfully" );
             }else{
                 res.status(400).send("Invalid credentials");
@@ -76,7 +79,7 @@ router.post('/login', async (req, res) => {
 
 //user logout
 router.get('/logout', async (req, res) => {
-    res.clearCookie('token', {path: '/'});
+    res.clearCookie('token', { path: '/' , httpOnly: true, secure: true, sameSite: "none" });
     res.status(200).send("User logged out successfully");
 })
 
